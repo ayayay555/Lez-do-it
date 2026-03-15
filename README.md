@@ -1,8 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LezDoIt
+
+LezDoIt is a modern web application built with Next.js that leverages Google's Gemini AI to automatically generate high-converting business funnels, landing pages, and standalone HTML sites based on client strategy questionnaires and selected design themes (e.g., Tech-Chic, Cyberpunk, Brutalist, Friendly SaaS). 
+
+It acts as an automated "Lead Frontend Architect," taking your input, styling preferences, and assets, and outputting production-ready, highly-opinionated web pages.
+
+## Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **AI Integration**: [Google Generative AI (Gemini)](https://ai.google.dev/)
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Node.js**: v18.x or higher (v20+ recommended)
+- **npm** (or `yarn`, `pnpm`, `bun`)
+- **Git**
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+To clone the project to your local machine, run the following command in your terminal:
+
+```bash
+git clone https://github.com/your-username/Lez-do-it.git
+cd Lez-do-it
+```
+
+*(Note: Replace `your-username/lezdoit` with the actual repository URL once published).*
+
+### 2. Install Dependencies
+
+Install the required packages using your preferred package manager:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+### 3. Set up Environment Variables
+
+To run the AI generation features, you need a Google Gemini API Key. 
+
+1. Copy the example environment file:
+   ```bash
+   cp .env.example .env.local
+   ```
+2. Open `.env.local` in your code editor and add your API key:
+   ```env
+   GOOGLE_GENERATIVE_AI_API_KEY=your_gemini_api_key_here
+   ```
+   *You can get a Gemini API key from Google AI Studio.*
+
+### 4. Run the Development Server
+
+Start the local development server:
 
 ```bash
 npm run dev
@@ -10,27 +68,22 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start the funnel generation process by navigating through the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/page.tsx`: The main landing page.
+- `src/app/consultation/page.tsx`: The client strategy and input form.
+- `src/app/api/generate/route.ts`: The backend API route that communicates with Google Gemini to generate the HTML output.
+- `src/components/ui/`: Reusable UI components built with shadcn/ui.
+- `public/`: Static assets.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Feel free to **clone**, **fork**, or **contribute** to this project! If you have ideas for new themes, better prompts, or UI improvements, please open an issue or submit a pull request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
